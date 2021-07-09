@@ -1,6 +1,1 @@
-#include "meh.h"
-
-int main() {
-  f();
-  return 0;
-}
+int main() { return 0; }

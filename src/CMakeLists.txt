@@ -1,4 +1,4 @@
-file(GLOB SOURCES "*.cpp")
+file(GLOB_RECURSE SOURCES "*.cpp")
 list(FILTER SOURCES EXCLUDE REGEX ".*main.cpp$")
 
 add_library(MehLib ${SOURCES})
