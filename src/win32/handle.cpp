@@ -2,6 +2,10 @@
 
 namespace meh {
 
-void HandleDeleter::operator()(HANDLE h) { ::CloseHandle(h); }
+void HandleDeleter::operator()(HANDLE h) {
+  if (NULL != h && INVALID_HANDLE_VALUE != h) {
+    ::CloseHandle(h);
+  }
+}
 
 } // namespace meh

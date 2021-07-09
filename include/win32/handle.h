@@ -1,5 +1,6 @@
 #pragma once
 
+#include "win32/handle.h"
 #include <memory>
 
 #include <Windows.h>
@@ -11,6 +12,7 @@ public:
   void operator()(HANDLE h);
 };
 
-using UniqueHandle = std::unique_ptr<std::remove_pointer_t<HANDLE>>;
+using UniqueHandle =
+    std::unique_ptr<std::remove_pointer_t<HANDLE>, HandleDeleter>;
 
 } // namespace meh
